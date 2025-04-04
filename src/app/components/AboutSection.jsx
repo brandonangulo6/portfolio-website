@@ -9,9 +9,16 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
+        <li>Python</li>
         <li>SQL</li>
         <li>JavaScript</li>
+        <li>Data Visualization</li>
+        <li>Statistical Analysis & Causal Inference</li>
+        <li>Pandas & NumPy</li>
+        <li>Scikit-Learn</li>
+        <li>Git & GitHub</li>
+        <li>Power BI</li>
+        <li>Node.js</li>
       </ul>
     ),
   },
@@ -21,6 +28,7 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2">
         <li>University of California, Berkeley</li>
+        <li>Alliance Leichtman-Levine Environmental Science High School</li>
       </ul>
     ),
   },
@@ -29,7 +37,9 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>Forage</li>
+        <li>BCG - Data Science Job Simulation</li>
+        <li>PwC Switzerland - Power BI Job Simulation</li>
+        <li>Quantium - Data Analytics Job Simulation</li>
       </ul>
     ),
   },
@@ -46,40 +56,38 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
+    <section className="text-[var(--color-foreground)]" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/dog-dummy.png" width={500} height={500} alt='About Image' />
+        <Image src="/images/Me.jpg" width={500} height={500} alt="About Me" />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            Hi, I’m Brandon Angulo, a data scientist, analyst, and software engineer with a B.A. in Data Science 
+            from UC Berkeley and expertise in Python, SQL, Power BI, and machine learning. I have experience in predictive 
+            modeling, data analytics, and software development, with projects spanning customer churn analysis, AI-driven gaming 
+            analytics, and causal inference in elections. Proficient in Scikit-learn, Pandas, NumPy, Java, C#, and JavaScript, I 
+            excel at transforming data into actionable insights and building scalable solutions. I’m passionate about leveraging 
+            data to solve real-world challenges and am actively seeking opportunities in data science, analytics, or software 
+            engineering.
           </p>
-          <div className="flex flex-row justify-start mt-8">
+          <div className="flex flex-wrap justify-center gap-2 mt-8"> {/* Change justify-start to justify-center */}
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
+              Education
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("certifications")}
               active={tab === "certifications"}
             >
-              {" "}
-              Certifications{" "}
+              Certifications
             </TabButton>
           </div>
           <div className="mt-8">
