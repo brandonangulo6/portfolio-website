@@ -83,8 +83,8 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="ML & AI"
-          isSelected={tag === "ML & AI"}
+          name="AI & ML"
+          isSelected={tag === "AI & ML"}
         />
         <ProjectTag
           onClick={handleTagChange}
