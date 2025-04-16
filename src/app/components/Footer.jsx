@@ -10,7 +10,7 @@ const Footer = () => {
           <p className="text-[#ADB7BE] text-sm sm:text-base">
             © {new Date().getFullYear()} Brandon Angulo. All rights reserved.
           </p>
-          <p className="text-xs text-[#6B7280]">
+          <p className="text-xs text-[#ADB7BE]">
             Built with Next.js & Tailwind CSS
           </p>
         </div>

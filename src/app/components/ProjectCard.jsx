@@ -17,6 +17,7 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl }) => {
           <Link
             href={gitUrl}
             className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white flex items-center justify-center"
+            aria-label={`View the ${title} project on GitHub`} // Added aria-label here
           >
             <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] group-hover:text-white transition-all duration-300" />
           </Link>
