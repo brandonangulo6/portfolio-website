@@ -2,9 +2,18 @@
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const projectsData = [
+  {
+    id: 6,
+    title: "Quantium Data Analytics Job Simulation",
+    description: "Gained hands-on experience analyzing customer transaction data, conducting uplift testing, and delivering strategic commercial insights through data-driven reports.",
+    image: "/images/Proj-prev/qua-dat-ana-prev.png",
+    tag: ["All", "Data Viz"],
+    gitUrl: "https://github.com/brandonangulo6/quantium-data-analytics",
+    previewUrl: "",
+  },
   {
     id: 5,
     title: "BCG Data Science Job Simulation",
@@ -16,11 +25,11 @@ const projectsData = [
   },
   {
     id: 4,
-    title: "Action Map",
+    title: "Action Map (Private)",
     description: "Developed a civic data visualization tool using Ruby on Rails and JavaScript, integrating APIs to empower informed decision-making.",
     image: "/images/Proj-prev/act-map-prev.png",
     tag: ["All", "Data Viz"],
-    gitUrl: "",
+    gitUrl: "https://github.com/brandonangulo6",
     previewUrl: "",
   },
   {
@@ -34,20 +43,20 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "Pacman AI",
+    title: "Pacman AI (Private)",
     description: "Designed AI algorithms using A* search, Q-learning, and reinforcement learning to optimize in-game decision-making.",
     image: "/images/Proj-prev/pac-AI-prev.png",
     tag: ["All", "AI & ML", "Gaming"],
-    gitUrl: "",
+    gitUrl: "https://github.com/brandonangulo6",
     previewUrl: "",
   },
   {
     id: 1,
-    title: "Predicting Housing Prices in Cook County",
+    title: "Predicting Housing Prices in Cook County (Private)",
     description: "Developed a regression model to improve property tax assessments, applying feature engineering and bias evaluation techniques.",
-    image: "/images/pre-hous-pri-prev.png",
+    image: "/images/Proj-prev/pre-hous-pri-prev.png",
     tag: ["All", "AI & ML", "Data Viz"],
-    gitUrl: "",
+    gitUrl: "https://github.com/brandonangulo6",
     previewUrl: "",
   }
 ];
@@ -102,26 +111,33 @@ const ProjectsSection = () => {
           isSelected={tag === "Software"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-            />
-          </motion.li>
-        ))}
-      </ul>
+
+      {/* Scrollable container */}
+      <div
+        className="max-h-[1000px] overflow-y-auto pr-2"
+        ref={ref}
+      >
+        <ul className="grid md:grid-cols-3 gap-8 md:gap-12">
+          {filteredProjects.map((project, index) => (
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+              <ProjectCard
+                key={project.id}
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+            </motion.li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 };

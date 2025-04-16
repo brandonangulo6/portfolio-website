@@ -37,20 +37,20 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+            Building smart, impactful solutions at the intersection of data and code.
           </p>
           <div>
             <Link
               href="/#contact"
-              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-primary hover:bg-gradient-to-br from-[#9333ea] to-[#ec4899] text-white"
+              className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-primary text-white transition hover:opacity-90"
             >
               Hire Me
             </Link>
+
             <Link
               href="/Brandon_Angulo_Resume.pdf"
               download
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-primary hover:bg-gradient-to-br from-[#9333ea] to-[#ec4899] text-white mt-3"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-primary text-white mt-3 transition hover:opacity-90"
             >
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Download CV

@@ -2,45 +2,73 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
+import { AnimatePresence, motion } from "framer-motion";
 
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Python</li>
-        <li>SQL</li>
-        <li>JavaScript</li>
-        <li>Data Visualization</li>
-        <li>Statistical Analysis & Causal Inference</li>
-        <li>Pandas & NumPy</li>
-        <li>Scikit-Learn</li>
-        <li>Git & GitHub</li>
-        <li>Power BI</li>
-        <li>Node.js</li>
-      </ul>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        {[
+          "Python",
+          "SQL",
+          "JavaScript",
+          "Data Visualization",
+          "Statistical Analysis & Causal Inference",
+          "Pandas & NumPy",
+          "Scikit-Learn",
+          "Git & GitHub",
+          "Power BI",
+          "Node.js",
+        ].map((skill, idx) => (
+          <div
+            key={idx}
+            className="bg-[#1F2937] text-white px-4 py-3 rounded-lg shadow-md text-center text-sm hover:bg-[#374151] transition flex items-center justify-center min-h-[72px]"
+          >
+            {skill}
+          </div>
+        ))}
+      </div>
     ),
   },
   {
     title: "Education",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>University of California, Berkeley</li>
-        <li>Alliance Leichtman-Levine Environmental Science High School</li>
-      </ul>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {[
+          "University of California, Berkeley",
+          "Alliance Leichtman-Levine Environmental Science High School",
+        ].map((edu, idx) => (
+          <div
+            key={idx}
+            className="bg-[#1F2937] text-white px-4 py-3 rounded-lg shadow-md text-center text-sm hover:bg-[#374151] transition flex items-center justify-center min-h-[72px]"
+          >
+            {edu}
+          </div>
+        ))}
+      </div>
     ),
   },
   {
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul className="list-disc pl-2">
-        <li>BCG - Data Science Job Simulation</li>
-        <li>PwC Switzerland - Power BI Job Simulation</li>
-        <li>Quantium - Data Analytics Job Simulation</li>
-      </ul>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {[
+          "BCG - Data Science Job Simulation",
+          "PwC Switzerland - Power BI Job Simulation",
+          "Quantium - Data Analytics Job Simulation",
+        ].map((cert, idx) => (
+          <div
+            key={idx}
+            className="bg-[#1F2937] text-white px-4 py-3 rounded-lg shadow-md text-center text-sm hover:bg-[#374151] transition flex items-center justify-center min-h-[72px]"
+          >
+            {cert}
+          </div>
+        ))}
+      </div>
     ),
   },
 ];
@@ -55,10 +83,19 @@ const AboutSection = () => {
     });
   };
 
+  const currentTab = TAB_DATA.find((t) => t.id === tab);
+
   return (
     <section className="text-[var(--color-foreground)]" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/Me.jpg" width={500} height={500} alt="About Me" />
+        <Image
+          src="/images/About-Me.webp"
+          alt="About Me"
+          width={500}
+          height={500}
+          priority
+          className="rounded-xl object-cover shadow-lg"
+        />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
@@ -70,7 +107,7 @@ const AboutSection = () => {
             data to solve real-world challenges and am actively seeking opportunities in data science, analytics, or software 
             engineering.
           </p>
-          <div className="flex flex-wrap justify-center gap-2 mt-8"> {/* Change justify-start to justify-center */}
+          <div className="flex flex-wrap justify-center gap-2 mt-8"> 
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
@@ -90,8 +127,19 @@ const AboutSection = () => {
               Certifications
             </TabButton>
           </div>
-          <div className="mt-8">
-            {TAB_DATA.find((t) => t.id === tab).content}
+
+          <div className="mt-8 min-h-[140px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={tab}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                {currentTab.content}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

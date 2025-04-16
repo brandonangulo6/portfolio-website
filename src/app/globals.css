@@ -6,8 +6,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --color-primary: #9333ea; /* Tailwind's purple-500 */
-  --color-secondary: #ec4899; /* Tailwind's pink-500 */
+  --color-primary: #3B82F6; /* Tailwind's purple-500 */
+  --color-secondary: #06B6D4; /* Tailwind's pink-500 */
 
   --color-background: rgb(var(--background-start-rgb));
   --color-foreground: rgb(var(--foreground-rgb));
