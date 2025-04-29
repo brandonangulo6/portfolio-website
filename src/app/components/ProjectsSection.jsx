@@ -36,7 +36,7 @@ const projectsData = [
     id: 3,
     title: "Presidential Candidate Analysis",
     description: "Conducted a causal inference study on U.S. primary elections, revealing a 71.9% increase in success with party support using machine learning models.",
-    image: "/images/Proj-prev/pre-can-ana-prev.PNG",
+    image: "/images/Proj-prev/pre-can-ana-prev.png",
     tag: ["All", "AI & ML", "Data Viz"],
     gitUrl: "https://github.com/brandonangulo6/presidential-candidate-analysis",
     previewUrl: "",
