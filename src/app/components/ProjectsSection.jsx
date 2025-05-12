@@ -6,6 +6,15 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const projectsData = [
   {
+    id: 7,
+    title: "Walmart Advanced Software Engineering Job Simulation",
+    description: "Gained hands-on experience solving technical challenges for Walmart teams by developing a custom heap data structure in Java, designing UML diagrams for system architecture, and creating ER diagrams to model databases based on real-world requirements.",
+    image: "/images/Proj-prev/wal-se-cpa-prev.png",
+    tag: ["All", "Software"],
+    gitUrl: "https://github.com/brandonangulo6/walmart-se-cpath",
+    previewUrl: "",
+  },
+  {
     id: 6,
     title: "Quantium Data Analytics Job Simulation",
     description: "Gained hands-on experience analyzing customer transaction data, conducting uplift testing, and delivering strategic commercial insights through data-driven reports.",
