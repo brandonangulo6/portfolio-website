@@ -6,6 +6,15 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const projectsData = [
   {
+    id: 8,
+    title: "AI-Powered Resume-Job Matcher Web App",
+    description: "Built a full-stack web app using Flask, Hugging Face NLP, and Next.js to match resumes with job descriptions, achieving 90%+ semantic accuracy and delivering a dynamic, user-friendly interface with Tailwind and TypeScript.",
+    image: "/images/Proj-prev/resume-job-matcher-prev.png",
+    tag: ["All", "Software", "AI & ML"],
+    gitUrl: "https://github.com/brandonangulo6/resume-matcher",
+    previewUrl: "",
+  },
+  {
     id: 7,
     title: "Walmart Advanced Software Engineering Job Simulation",
     description: "Gained hands-on experience solving technical challenges for Walmart teams by developing a custom heap data structure in Java, designing UML diagrams for system architecture, and creating ER diagrams to model databases based on real-world requirements.",

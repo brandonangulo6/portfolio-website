@@ -40,6 +40,7 @@ const TAB_DATA = [
         {[
           "University of California, Berkeley",
           "Alliance Leichtman-Levine Environmental Science High School",
+          "Los Angeles Clean Tech Incubator [LACI]",
         ].map((edu, idx) => (
           <div
             key={idx}
@@ -60,6 +61,7 @@ const TAB_DATA = [
           "BCG - Data Science Job Simulation",
           "PwC Switzerland - Power BI Job Simulation",
           "Quantium - Data Analytics Job Simulation",
+          "Walmart Advanced Software Engineering",
         ].map((cert, idx) => (
           <div
             key={idx}
