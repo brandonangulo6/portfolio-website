@@ -3,75 +3,26 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 import { AnimatePresence, motion } from "framer-motion";
+import { skills, education, certifications } from "@/data/about";
 
 const TAB_DATA = [
   {
     title: "Skills",
     id: "skills",
-    content: (
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        {[
-          "Python",
-          "SQL",
-          "JavaScript",
-          "Data Visualization",
-          "Statistical Analysis & Causal Inference",
-          "Pandas & NumPy",
-          "Scikit-Learn",
-          "Git & GitHub",
-          "Power BI",
-          "Node.js",
-        ].map((skill, idx) => (
-          <div
-            key={idx}
-            className="bg-[#1F2937] text-white px-4 py-3 rounded-lg shadow-md text-center text-sm hover:bg-[#374151] transition flex items-center justify-center min-h-[72px]"
-          >
-            {skill}
-          </div>
-        ))}
-      </div>
-    ),
+    items: skills,
+    gridCols: "grid-cols-2 sm:grid-cols-3",
   },
   {
     title: "Education",
     id: "education",
-    content: (
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {[
-          "University of California, Berkeley",
-          "Alliance Leichtman-Levine Environmental Science High School",
-          "Los Angeles Clean Tech Incubator [LACI]",
-        ].map((edu, idx) => (
-          <div
-            key={idx}
-            className="bg-[#1F2937] text-white px-4 py-3 rounded-lg shadow-md text-center text-sm hover:bg-[#374151] transition flex items-center justify-center min-h-[72px]"
-          >
-            {edu}
-          </div>
-        ))}
-      </div>
-    ),
+    items: education,
+    gridCols: "grid-cols-1 sm:grid-cols-2",
   },
   {
     title: "Certifications",
     id: "certifications",
-    content: (
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {[
-          "BCG - Data Science Job Simulation",
-          "PwC Switzerland - Power BI Job Simulation",
-          "Quantium - Data Analytics Job Simulation",
-          "Walmart Advanced Software Engineering",
-        ].map((cert, idx) => (
-          <div
-            key={idx}
-            className="bg-[#1F2937] text-white px-4 py-3 rounded-lg shadow-md text-center text-sm hover:bg-[#374151] transition flex items-center justify-center min-h-[72px]"
-          >
-            {cert}
-          </div>
-        ))}
-      </div>
-    ),
+    items: certifications,
+    gridCols: "grid-cols-1 sm:grid-cols-2",
   },
 ];
 
@@ -101,13 +52,13 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            Hi, I’m Brandon Angulo, a data scientist, analyst, and software engineer with a B.A. in Data Science 
-            from UC Berkeley and expertise in Python, SQL, Power BI, and machine learning. I have experience in predictive 
+            Hi, I’m Brandon Angulo, a data engineer, data scientist, and software engineer with a B.A. in Data Science 
+            from UC Berkeley. Currently at Atrium, I design and maintain ELT pipelines, time-series databases, and data infrastructure 
+            for hospitality and utility data. I have experience in predictive 
             modeling, data analytics, and software development, with projects spanning customer churn analysis, AI-driven gaming 
-            analytics, and causal inference in elections. Proficient in Scikit-learn, Pandas, NumPy, Java, C#, and JavaScript, I 
+            analytics, and causal inference in elections. Proficient in Python, SQL, Airflow, TimeScaleDB, Scikit-learn, Pandas, NumPy, and JavaScript, I 
             excel at transforming data into actionable insights and building scalable solutions. I’m passionate about leveraging 
-            data to solve real-world challenges and am actively seeking opportunities in data science, analytics, or software 
-            engineering.
+            data to solve real-world challenges and am actively seeking opportunities in data engineering, data science, or software engineering.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mt-8"> 
             <TabButton
@@ -139,7 +90,16 @@ const AboutSection = () => {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                {currentTab.content}
+                <div className={`grid ${currentTab.gridCols} gap-4`}>
+                  {currentTab.items.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="skill-card text-[rgb(var(--foreground-rgb))] px-4 py-3 rounded-lg shadow-md text-center text-sm transition flex items-center justify-center min-h-[72px]"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>

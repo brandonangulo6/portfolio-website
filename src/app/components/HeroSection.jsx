@@ -15,7 +15,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+          <h1 className="text-[rgb(var(--foreground-rgb))] mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
             <span className="text-gradient-primary">
               Hello, I&apos;m{" "}
             </span>
@@ -24,11 +24,13 @@ const HeroSection = () => {
               sequence={[
                 "Brandon",
                 1000,
+                "A Data Engineer",
+                1000,
                 "A Data Scientist",
                 1000,
                 "A Data Analyst",
                 1000,
-                "A Programmer",
+                "A Software Engineer",
                 1000,
               ]}
               wrapper="span"
@@ -36,7 +38,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-[var(--muted)] text-base sm:text-lg mb-6 lg:text-xl">
             Building smart, impactful solutions at the intersection of data and code.
           </p>
           <div>
@@ -50,9 +52,9 @@ const HeroSection = () => {
             <Link
               href="/Brandon_Angulo_Resume.pdf"
               download
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-primary text-white mt-3 transition hover:opacity-90"
+              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-primary mt-3 transition hover:opacity-90"
             >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              <span className="block cv-inner rounded-full px-5 py-2">
                 Download CV
               </span>
             </Link>
@@ -64,7 +66,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden">
+          <div className="rounded-full w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden" style={{ backgroundColor: 'var(--hero-circle-bg)' }}>
             <Image
               src="/images/Hero-Icon.png"
               alt="hero image"

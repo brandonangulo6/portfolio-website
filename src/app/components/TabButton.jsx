@@ -7,15 +7,14 @@ const variants = {
 };
 
 const TabButton = ({ active, selectTab, children }) => {
-  const buttonClasses = active ? "text-white" : "text-[#ADB7BE]";
   const borderColor = active ? "border-[var(--color-primary)]" : "border-transparent";
 
   return (
     <button
       onClick={selectTab}
-      className={`flex items-center justify-center border-2 ${borderColor} px-6 py-3 rounded-full gap-2`} // Added gap-2 instead of margins
+      className={`flex items-center justify-center border-2 ${borderColor} px-6 py-3 rounded-full gap-2 tab-button`}
     >
-      <p className={`font-semibold hover:text-white cursor-pointer ${buttonClasses}`}>
+      <p className={`font-semibold cursor-pointer ${active ? "tab-button-active" : "tab-button-inactive"}`}>
         {children}
       </p>
       <motion.div
